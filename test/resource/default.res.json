@@ -1,0 +1,277 @@
+{
+	"groups": [
+		{
+			"keys": "description_json,TS_FNT02_fnt,TS_FNT02_png,vs_jpg,battleBG_jpg,map_jpg,next_png,Role_action_ske_json,no_png,yes_png,button_OFF_01_png,button_OFF_02_png,button_OFF_03_png,button_OFF_04_png,button_ON_01_png,button_ON_02_png,button_ON_03_png,button_ON_04_png,Boss_01_png,Boss_02_png,Boss_03_png,Role_01_png,Role_action_tex_0_png,Role_action_tex_1_png,Role_action_tex_0_json,Role_action_tex_1_json,success_png,back_button_off_png,back_button_on_png,fail_png,Scenes_01_png,map_all_png,map_lock_02_png,map_lock_03_png,boss_icon_png,Blood_01_png,Blood_02_png,Blood_03_png,Blood_05_png,Blood_04_png,Avatar_01_png,Avatar_frame_png,Avatar_Boss_01_png",
+			"name": "preload"
+		},
+		{
+			"keys": "1631757513935_jpg",
+			"name": "loading"
+		},
+		{
+			"keys": "answer_02_png,frame_png,question_01_png,question_02_png,answer_01_png",
+			"name": "questions"
+		},
+		{
+			"keys": "Boss_02_png,Boss_03_png,Scenes_02_png,Scenes_03_png",
+			"name": "game2"
+		}
+	],
+	"resources": [
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "assets/TS_FNT02.fnt",
+			"type": "font",
+			"name": "TS_FNT02_fnt"
+		},
+		{
+			"url": "assets/TS_FNT02.png",
+			"type": "image",
+			"name": "TS_FNT02_png"
+		},
+		{
+			"url": "assets/vs.jpg",
+			"type": "image",
+			"name": "vs_jpg"
+		},
+		{
+			"url": "assets/battleBG.jpg",
+			"type": "image",
+			"name": "battleBG_jpg"
+		},
+		{
+			"url": "assets/map.jpg",
+			"type": "image",
+			"name": "map_jpg"
+		},
+		{
+			"url": "assets/next.png",
+			"type": "image",
+			"name": "next_png"
+		},
+		{
+			"url": "assets/Role_action_ske.json",
+			"type": "json",
+			"name": "Role_action_ske_json"
+		},
+		{
+			"url": "assets/question_02.png",
+			"type": "image",
+			"name": "question_02_png"
+		},
+		{
+			"url": "assets/question_01.png",
+			"type": "image",
+			"name": "question_01_png"
+		},
+		{
+			"url": "assets/answer_02.png",
+			"type": "image",
+			"name": "answer_02_png"
+		},
+		{
+			"url": "assets/answer_01.png",
+			"type": "image",
+			"name": "answer_01_png"
+		},
+		{
+			"url": "assets/no.png",
+			"type": "image",
+			"name": "no_png"
+		},
+		{
+			"url": "assets/yes.png",
+			"type": "image",
+			"name": "yes_png"
+		},
+		{
+			"url": "assets/button_OFF_01.png",
+			"type": "image",
+			"name": "button_OFF_01_png"
+		},
+		{
+			"url": "assets/button_OFF_02.png",
+			"type": "image",
+			"name": "button_OFF_02_png"
+		},
+		{
+			"url": "assets/button_OFF_03.png",
+			"type": "image",
+			"name": "button_OFF_03_png"
+		},
+		{
+			"url": "assets/button_OFF_04.png",
+			"type": "image",
+			"name": "button_OFF_04_png"
+		},
+		{
+			"url": "assets/button_ON_01.png",
+			"type": "image",
+			"name": "button_ON_01_png"
+		},
+		{
+			"url": "assets/button_ON_02.png",
+			"type": "image",
+			"name": "button_ON_02_png"
+		},
+		{
+			"url": "assets/button_ON_03.png",
+			"type": "image",
+			"name": "button_ON_03_png"
+		},
+		{
+			"url": "assets/button_ON_04.png",
+			"type": "image",
+			"name": "button_ON_04_png"
+		},
+		{
+			"url": "assets/Boss_01.png",
+			"type": "image",
+			"name": "Boss_01_png"
+		},
+		{
+			"url": "assets/Boss_02.png",
+			"type": "image",
+			"name": "Boss_02_png"
+		},
+		{
+			"url": "assets/Boss_03.png",
+			"type": "image",
+			"name": "Boss_03_png"
+		},
+		{
+			"url": "assets/Role_01.png",
+			"type": "image",
+			"name": "Role_01_png"
+		},
+		{
+			"url": "assets/1631757513935.jpg",
+			"type": "image",
+			"name": "1631757513935_jpg"
+		},
+		{
+			"url": "assets/frame.png",
+			"type": "image",
+			"name": "frame_png"
+		},
+		{
+			"url": "assets/Role_action_tex_0.png",
+			"type": "image",
+			"name": "Role_action_tex_0_png"
+		},
+		{
+			"url": "assets/Role_action_tex_1.png",
+			"type": "image",
+			"name": "Role_action_tex_1_png"
+		},
+		{
+			"url": "assets/Role_action_tex_0.json",
+			"type": "json",
+			"name": "Role_action_tex_0_json"
+		},
+		{
+			"url": "assets/Role_action_tex_1.json",
+			"type": "json",
+			"name": "Role_action_tex_1_json"
+		},
+		{
+			"url": "assets/success.png",
+			"type": "image",
+			"name": "success_png"
+		},
+		{
+			"url": "assets/back_button_off.png",
+			"type": "image",
+			"name": "back_button_off_png"
+		},
+		{
+			"url": "assets/back_button_on.png",
+			"type": "image",
+			"name": "back_button_on_png"
+		},
+		{
+			"url": "assets/fail.png",
+			"type": "image",
+			"name": "fail_png"
+		},
+		{
+			"url": "assets/Scenes_02.png",
+			"type": "image",
+			"name": "Scenes_02_png"
+		},
+		{
+			"url": "assets/Scenes_03.png",
+			"type": "image",
+			"name": "Scenes_03_png"
+		},
+		{
+			"url": "assets/Scenes_01.png",
+			"type": "image",
+			"name": "Scenes_01_png"
+		},
+		{
+			"url": "assets/map_all.png",
+			"type": "image",
+			"name": "map_all_png"
+		},
+		{
+			"url": "assets/map_lock_02.png",
+			"type": "image",
+			"name": "map_lock_02_png"
+		},
+		{
+			"url": "assets/map_lock_03.png",
+			"type": "image",
+			"name": "map_lock_03_png"
+		},
+		{
+			"url": "assets/boss_icon.png",
+			"type": "image",
+			"name": "boss_icon_png"
+		},
+		{
+			"url": "assets/Blood_01.png",
+			"type": "image",
+			"name": "Blood_01_png"
+		},
+		{
+			"url": "assets/Blood_02.png",
+			"type": "image",
+			"name": "Blood_02_png"
+		},
+		{
+			"url": "assets/Blood_03.png",
+			"type": "image",
+			"name": "Blood_03_png"
+		},
+		{
+			"url": "assets/Blood_05.png",
+			"type": "image",
+			"name": "Blood_05_png"
+		},
+		{
+			"url": "assets/Blood_04.png",
+			"type": "image",
+			"name": "Blood_04_png"
+		},
+		{
+			"url": "assets/Avatar_01.png",
+			"type": "image",
+			"name": "Avatar_01_png"
+		},
+		{
+			"url": "assets/Avatar_frame.png",
+			"type": "image",
+			"name": "Avatar_frame_png"
+		},
+		{
+			"url": "assets/Avatar_Boss_01.png",
+			"type": "image",
+			"name": "Avatar_Boss_01_png"
+		}
+	]
+}

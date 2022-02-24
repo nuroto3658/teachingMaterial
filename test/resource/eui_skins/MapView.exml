@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MapViewSkin" width="400" height="300" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="17f2c227be6" ></w:Config>
+	<e:Group id="mapGP" width="1600" height="900" verticalCenter="0" horizontalCenter="0">
+		<e:Image id="mapBGImg" source="map_all_png" verticalCenter="0" horizontalCenter="0" visible="true"/>
+		<e:Image id="icon_1" source="boss_icon_png" verticalCenter="200" horizontalCenter="-300" visible="true"/>
+		<e:Image id="maplock_2_Img" source="map_lock_02_png" verticalCenter="140" horizontalCenter="418" visible="true" />
+		<e:Image id="icon_2" source="boss_icon_png" verticalCenter="170" horizontalCenter="424" visible="false"/>
+		<e:Image id="maplock_3_Img" source="map_lock_03_png" verticalCenter="-246" horizontalCenter="52" visible="true" />
+		<e:Image id="icon_3" source="boss_icon_png" verticalCenter="-250" horizontalCenter="46" visible="false"/>
+		</e:Group>
+	<!--<e:Group id="buttonGP_1" width="1600" height="900">
+		<e:Group id="optionGP_1" x="335" y="200" width="145" height="130" />
+	</e:Group>-->
+</e:Skin>
