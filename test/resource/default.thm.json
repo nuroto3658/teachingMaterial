@@ -16,12 +16,14 @@
 		"GameView": "resource/eui_skins/GameView.exml",
 		"game_2_view": "resource/eui_skins/game_2_view.exml",
 		"Game_2_View": "resource/eui_skins/Game_2_View.exml",
-		"MapView": "resource/eui_skins/MapView.exml"
+		"MapView": "resource/eui_skins/MapView.exml",
+		"Game_3_View": "resource/eui_skins/Game_3_View.exml"
 	},
 	"autoGenerateExmlsList": true,
 	"exmls": [
 		"resource/eui_skins/ButtonSkin.exml",
 		"resource/eui_skins/Game_2_View.exml",
+		"resource/eui_skins/Game_3_View.exml",
 		"resource/eui_skins/GameView.exml",
 		"resource/eui_skins/MapView.exml"
 	],

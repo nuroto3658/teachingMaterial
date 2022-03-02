@@ -40,31 +40,44 @@ class MapView extends eui.Component implements eui.UIComponent
 	public showIcon(mission)
 	{
 		const self = this;
-		if (mission == "1")
+		switch (mission)
 		{
-			self.maplock_2_Img.visible = true;
-			egret.Tween.get(self.maplock_2_Img)
-				.to({ alpha: 0 }, 2000)
-				.wait(500)
-				.call(() => self.afterShowIcon(mission))
-		} else
-		{
-			self.maplock_3_Img.visible = true;
-			egret.Tween.get(self.maplock_3_Img)
-				.to({ alpha: 0 }, 2000)
-				.wait(500)
-				.call(() => self.afterShowIcon(mission))
+			case "game1":
+				if (self.maplock_2_Img.alpha == 0) return;
+				self.maplock_2_Img.visible = true;
+				egret.Tween.get(self.maplock_2_Img)
+					.to({ alpha: 0 }, 1500)
+					.wait(500)
+					.call(() => self.afterShowIcon(mission))
+				break;
+			case "game2":
+				if (self.maplock_3_Img.alpha == 0) return;
+				self.maplock_3_Img.visible = true;
+				egret.Tween.get(self.maplock_3_Img)
+					.to({ alpha: 0 }, 1500)
+					.wait(500)
+					.call(() => self.afterShowIcon(mission))
+				break;
+			case "game3":
+				break;
+
 		}
 	}
 	private afterShowIcon(mission)
 	{
 		const self = this;
-		if (mission == "1")
+
+		switch (mission)
 		{
-			self.icon_2.visible = true;
-		} else
-		{
-			self.icon_3.visible = true;
+			case "game1":
+				self.icon_2.visible = true;
+				break;
+			case "game2":
+				self.icon_3.visible = true;
+				break;
+			case "game3":
+				break;
+
 		}
 	}
 }

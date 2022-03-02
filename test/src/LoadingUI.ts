@@ -50,7 +50,7 @@ class LoadingUI extends egret.Sprite implements RES.PromiseTaskReporter
         this.addChild(gp);
 
         let bgimg = new eui.Image();
-        bgimg.source = "1631757513935_jpg";
+        bgimg.source = "loagding_png";
         gp.addChild(bgimg);
         bgimg.verticalCenter = bgimg.horizontalCenter = 0;
 

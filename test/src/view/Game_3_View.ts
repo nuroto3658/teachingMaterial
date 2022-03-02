@@ -1,4 +1,4 @@
-class Game_2_View extends eui.Component implements eui.UIComponent
+class Game_3_View extends eui.Component implements eui.UIComponent
 {
 	private readonly fullHP = 1;
 	//	按鈕group
@@ -64,7 +64,7 @@ class Game_2_View extends eui.Component implements eui.UIComponent
 		this.button_4.addEventListener(egret.TouchEvent.TOUCH_TAP, () => this.onClickOption("4"), this);
 
 		this.player = AssetsUtil.getInstance().getDragonBoneByConfig(AssetsConfig.PLAYER_ANIMATION, 0, true);
-		this.enemy = AssetsUtil.getInstance().getDragonBoneByConfig(AssetsConfig.BOSS_2_ANIMATION, 0, true);
+		this.enemy = AssetsUtil.getInstance().getDragonBoneByConfig(AssetsConfig.BOSS_3_ANIMATION, 0, true);
 		this.masterGP.addChild(this.player)
 		this.enemyGP.addChild(this.enemy)
 
@@ -228,7 +228,7 @@ class Game_2_View extends eui.Component implements eui.UIComponent
 					{
 						self.enemy.animation.gotoAndPlayByFrame("dead", 0, 1);
 						self.enemy.once(dragonBones.EgretEvent.COMPLETE, () => self.afterDead("enemy"), this);
-						self.callBack.createView("game2");
+						self.callBack.createView("game3");
 					}
 					else
 					{
@@ -289,7 +289,7 @@ class Game_2_View extends eui.Component implements eui.UIComponent
 				state = "success";
 				break;
 		}
-		self.backButton.once(egret.TouchEvent.TOUCH_TAP, () => self.callBack.onClickBackButton(state, "game2"), this);
+		self.backButton.once(egret.TouchEvent.TOUCH_TAP, () => self.callBack.onClickBackButton(state, "game3"), this);
 		this.player.animation.stop();
 		this.enemy.animation.stop();
 	}

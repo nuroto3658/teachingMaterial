@@ -114,6 +114,7 @@ class Main extends eui.UILayer
     private mapView: MapView = null;
     private gameView: GameView = null;
     private game_2_View: Game_2_View = null;
+    private game_3_View: Game_3_View = null;
     /**
      * 创建场景界面
      * Create scene interface
@@ -177,32 +178,99 @@ class Main extends eui.UILayer
         change();
     }
 
-    public createView()
+    public createView(scene)
     {
         const self = this;
-        self.game_2_View = new Game_2_View();
-        self.game_2_View.percentHeight = self.gameView.percentWidth = 100;
-        self.game_2_View.verticalCenter = self.gameView.horizontalCenter = 0;
-        self.game_2_View.callBack = self;
-        self.addChildAt(self.game_2_View, 0)
+        switch (scene)
+        {
+            case "game1":
+                if (self.game_2_View) return;
+                self.game_2_View = new Game_2_View();
+                self.game_2_View.percentHeight = self.gameView.percentWidth = 100;
+                self.game_2_View.verticalCenter = self.gameView.horizontalCenter = 0;
+                self.game_2_View.callBack = self;
+                self.addChildAt(self.game_2_View, 0)
+                break;
+            case "game2":
+                if (self.game_3_View) return;
+                self.game_3_View = new Game_3_View();
+                self.game_3_View.percentHeight = self.gameView.percentWidth = 100;
+                self.game_3_View.verticalCenter = self.gameView.horizontalCenter = 0;
+                self.game_3_View.callBack = self;
+                self.addChildAt(self.game_3_View, 0)
+                break;
+            case "game3":
+                break;
+        }
+
     }
 
     public onClickBackButton(state: string, mission: string): void
     {
         const self = this;
+
         self.mapView.visible = true;
-        self.gameView.backGP.visible = false;
-        self.gameView.backBGimg.visible = false;
-        self.gameView.failImg.visible = false;
-        self.gameView.successImg.visible = false;
-        self.gameView.backButton.visible = false;
         switch (state)
         {
             case "success":
                 self.mapView.visible = true;
                 self.mapView.showIcon(mission);
+                if (mission == "game1")
+                {
+                    self.gameView.backGP.visible = false;
+                    self.gameView.backBGimg.visible = false;
+                    self.gameView.failImg.visible = false;
+                    self.gameView.successImg.visible = false;
+                    self.gameView.backButton.visible = false;
+                    self.gameView.visible = false;
+                }
+                else if (mission == "game2")
+                {
+                    self.game_2_View.backGP.visible = false;
+                    self.game_2_View.backBGimg.visible = false;
+                    self.game_2_View.failImg.visible = false;
+                    self.game_2_View.successImg.visible = false;
+                    self.game_2_View.backButton.visible = false;
+                    self.game_2_View.visible = false;
+                }
+                else if (mission == "game3")
+                {
+                    self.game_3_View.backGP.visible = false;
+                    self.game_3_View.backBGimg.visible = false;
+                    self.game_3_View.failImg.visible = false;
+                    self.game_3_View.successImg.visible = false;
+                    self.game_3_View.backButton.visible = false;
+                    self.game_3_View.visible = false;
+                }
                 break;
             case "fail":
+                if (mission == "game1")
+                {
+                    self.gameView.backGP.visible = false;
+                    self.gameView.backBGimg.visible = false;
+                    self.gameView.failImg.visible = false;
+                    self.gameView.successImg.visible = false;
+                    self.gameView.backButton.visible = false;
+                    self.gameView.visible = false;
+                }
+                else if (mission == "game2")
+                {
+                    self.game_2_View.backGP.visible = false;
+                    self.game_2_View.backBGimg.visible = false;
+                    self.game_2_View.failImg.visible = false;
+                    self.game_2_View.successImg.visible = false;
+                    self.game_2_View.backButton.visible = false;
+                    self.game_2_View.visible = false;
+                }
+                else if (mission == "game3")
+                {
+                    self.game_3_View.backGP.visible = false;
+                    self.game_3_View.backBGimg.visible = false;
+                    self.game_3_View.failImg.visible = false;
+                    self.game_3_View.successImg.visible = false;
+                    self.game_3_View.backButton.visible = false;
+                    self.game_3_View.visible = false;
+                }
                 break;
         }
     }
@@ -213,12 +281,13 @@ class Main extends eui.UILayer
         switch (level)
         {
             case "1":
-                self.gameView.visible = true;
                 self.gameView.startGame();
                 break;
             case "2":
+                self.game_2_View.startGame();
                 break;
             case "3":
+                self.game_3_View.startGame();
                 break;
         }
     }

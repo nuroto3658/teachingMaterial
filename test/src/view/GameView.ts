@@ -1,13 +1,12 @@
 class GameView extends eui.Component implements eui.UIComponent
 {
+	private readonly fullHP = 1;
 	//	按鈕group
 	private buttonGP: eui.Group;
 	private button_1: eui.Button;
 	private button_2: eui.Button;
 	private button_3: eui.Button;
 	private button_4: eui.Button;
-	//	地圖
-	public mapBGImg: eui.Image;
 	//	人物group
 	private figureGP: eui.Group;
 	private masterGP: eui.Group;
@@ -31,8 +30,8 @@ class GameView extends eui.Component implements eui.UIComponent
 	//	答題正確
 	private correct: boolean = false;
 	//	血量
-	private playerHP: number = 5;
-	private enemyHP: number = 5;
+	private playerHP: number = 1;
+	private enemyHP: number = 1;
 	public callBack: Main
 	//	返回按鈕
 	public backGP: eui.Group;
@@ -74,12 +73,34 @@ class GameView extends eui.Component implements eui.UIComponent
 	public startGame()
 	{
 		const self = this;
+		self.resetSetting();
+		self.visible = true;
 		self.figureGP.visible = true;
 		egret.Tween.get(this)
 			.wait(2000)
 			.call(this.closeVsGP)
 			.wait(1000)
 			.call(this.startQuestion)
+	}
+
+	private resetSetting()
+	{
+		const self = this;
+		let blood: eui.Image;
+		//	寫條visible開啟
+		for (let i = 0; i < self.HPGP.numChildren; i++)
+		{
+			blood = self.HPGP.getChildAt(i) as eui.Image;
+			blood.visible = true;
+			blood = self.bossHPGP.getChildAt(i) as eui.Image;
+			blood.visible = true;
+		}
+		//	寫條回滿
+		self.playerHP = self.fullHP;
+		self.enemyHP = self.fullHP;
+		//	動畫回到idle
+		self.enemy.animation.gotoAndPlayByFrame("idle", 0, -1);
+		self.player.animation.gotoAndPlayByFrame("idle", 0, -1);
 	}
 	private closeVsGP()
 	{
@@ -207,7 +228,7 @@ class GameView extends eui.Component implements eui.UIComponent
 					{
 						self.enemy.animation.gotoAndPlayByFrame("dead", 0, 1);
 						self.enemy.once(dragonBones.EgretEvent.COMPLETE, () => self.afterDead("enemy"), this);
-						self.callBack.createView();
+						self.callBack.createView("game1");
 					}
 					else
 					{
@@ -268,7 +289,7 @@ class GameView extends eui.Component implements eui.UIComponent
 				state = "success";
 				break;
 		}
-		self.backButton.once(egret.TouchEvent.TOUCH_TAP, () => self.callBack.onClickBackButton(state, "1"), this);
+		self.backButton.once(egret.TouchEvent.TOUCH_TAP, () => self.callBack.onClickBackButton(state, "game1"), this);
 		this.player.animation.stop();
 		this.enemy.animation.stop();
 	}

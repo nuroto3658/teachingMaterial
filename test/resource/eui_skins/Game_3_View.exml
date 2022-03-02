@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="Game_2_ViewSkin" width="1600" height="900" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
-	<w:Config id="17f2bf92c5c" ></w:Config>
+<e:Skin class="Game_3_ViewSkin" width="1600" height="900" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="17f2ffe2aef" ></w:Config>
 <e:Group id="battlGP" width="1600" height="900" horizontalCenter="0" verticalCenter="0">
-		<e:Image id="BGImg" source="Scenes_02_png" verticalCenter="0" horizontalCenter="0" />
+		<e:Image id="BGImg" source="Scenes_03_png" verticalCenter="0" horizontalCenter="0" />
 		<e:Group id="masterGP" verticalCenter="200" horizontalCenter="-580"/>
 		<e:Group id="enemyGP" verticalCenter="200" horizontalCenter="550" />
 	</e:Group>
 	<e:Group id="figureGP" width="1600" height="900" horizontalCenter="0" verticalCenter="0" visible="true">
 		<e:Image id="vsImg" source="vs_jpg" width="1600" height="900" verticalCenter="0" horizontalCenter="0" />
 		<e:Image id="masterImg" source="Role_01_png" verticalCenter="0" horizontalCenter="-500"/>
-		<e:Image id="enemyImg" source="Boss_02_png" verticalCenter="0"  horizontalCenter="500"/>
+		<e:Image id="enemyImg" source="Boss_03_png" verticalCenter="0"  horizontalCenter="500"/>
 	</e:Group>
     <e:Group id="HPGP" width="1600" height="900" horizontalCenter="-500" verticalCenter="-300" scaleX="1.5" scaleY="1.5" visible="false">
 		<e:Image id="blood_frame" source="Avatar_frame_png" verticalCenter="0" horizontalCenter="0"  visible="true"/>
