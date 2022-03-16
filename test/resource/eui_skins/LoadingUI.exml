@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="LoadingUISkin" width="1600" height="900" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<e:Group id="loadGP" width="1600" height="900" horizontalCenter="0" verticalCenter="0">
+		<e:Image id="loadingBG" source="loagding_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Image id="progressBar_bg" source="LoadingBar_01_png" horizontalCenter="0" y="695" />
+		<e:ProgressBar id="progressBar" maximum="100" value="0" horizontalCenter="0" y="700">
+			<e:Skin>
+				<e:Image id="thumb" source="LoadingBar_02_png" />
+			</e:Skin>
+		</e:ProgressBar>
+	</e:Group>
+</e:Skin>

@@ -28,7 +28,6 @@ class MapView extends eui.Component implements eui.UIComponent
 		this.icon_3.addEventListener(egret.TouchEvent.TOUCH_TAP, () => this.onMapClick("3"), this);
 	}
 
-
 	private onMapClick(level)
 	{
 		const self = this;

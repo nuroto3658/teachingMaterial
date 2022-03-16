@@ -1,6 +1,6 @@
 class Game_3_View extends eui.Component implements eui.UIComponent
 {
-	private readonly fullHP = 1;
+
 	//	按鈕group
 	private buttonGP: eui.Group;
 	private button_1: eui.Button;
@@ -27,11 +27,12 @@ class Game_3_View extends eui.Component implements eui.UIComponent
 	private totalTimes: number;
 	//	問題數
 	private questions: number = 0;
+	private questionsList: number[];
 	//	答題正確
 	private correct: boolean = false;
 	//	血量
-	private playerHP: number = 1;
-	private enemyHP: number = 1;
+	private playerHP: number = 5;
+	private enemyHP: number = 5;
 	public callBack: Main
 	//	返回按鈕
 	public backGP: eui.Group;
@@ -42,6 +43,8 @@ class Game_3_View extends eui.Component implements eui.UIComponent
 	//	血條
 	private HPGP: eui.Group;
 	private bossHPGP: eui.Group;
+	// 超連結
+	private hyperlinkGP: eui.Group;
 
 	public constructor()
 	{
@@ -76,6 +79,11 @@ class Game_3_View extends eui.Component implements eui.UIComponent
 		self.resetSetting();
 		self.visible = true;
 		self.figureGP.visible = true;
+		self.questionsList =
+			Question.hard_questionList.sort(function ()
+			{//隨機打亂這個陣列
+				return Math.random() - 0.4;
+			});
 		egret.Tween.get(this)
 			.wait(2000)
 			.call(this.closeVsGP)
@@ -96,8 +104,8 @@ class Game_3_View extends eui.Component implements eui.UIComponent
 			blood.visible = true;
 		}
 		//	寫條回滿
-		self.playerHP = self.fullHP;
-		self.enemyHP = self.fullHP;
+		self.playerHP = AssetsConfig.fullHP;
+		self.enemyHP = AssetsConfig.fullHP;
 		//	動畫回到idle
 		self.enemy.animation.gotoAndPlayByFrame("idle", 0, -1);
 		self.player.animation.gotoAndPlayByFrame("idle", 0, -1);
@@ -122,13 +130,13 @@ class Game_3_View extends eui.Component implements eui.UIComponent
 	private countdownTimer()
 	{
 		const self = this;
-		self.questions++;
-		if (self.questions > 2)
+		if (self.questions > 9)
 		{
-			self.questions = 1
+			self.questions = 0;
 		}
-		self.questionImg.source = "question_0" + self.questions + "_png";
-		self.answerImg.source = "answer_0" + self.questions + "_png";
+		let questions = self.questionsList[self.questions]
+		self.questionImg.source = "question_0" + questions + "_hard_png";
+
 		self.questionImg.visible = true;
 		self.questionBGImg.visible = true;
 		self.buttonGP.visible = true;
@@ -154,7 +162,7 @@ class Game_3_View extends eui.Component implements eui.UIComponent
 		egret.Tween.removeTweens(self)
 		self.buttonGP.touchEnabled = false;
 		let answer: number;
-		answer = Question.answerList[self.questions - 1].indexOf(input);
+		answer = Question.hard_answerList[self.questionsList[self.questions]].indexOf(input);
 		if (answer == -1)
 		{
 			self.correct = false;
@@ -164,6 +172,22 @@ class Game_3_View extends eui.Component implements eui.UIComponent
 		{
 			self.correct = true;
 			self.logoImg.source = "yes_png"
+		}
+		let questions = self.questionsList[self.questions]
+		if (questions == 1 || questions == 2)
+		{
+			if (self.correct)
+			{
+				self.answerImg.source = "noIntroduce_png";
+			}
+			else
+			{
+				self.answerImg.source = "noIntroduce_error_png";
+			}
+		}
+		else
+		{
+			self.answerImg.source = "answer_0" + questions + "_hard_png";
 		}
 		egret.Tween.get(this)
 			.wait(500).call(this.showAnswer)
@@ -178,9 +202,103 @@ class Game_3_View extends eui.Component implements eui.UIComponent
 		self.answerImg.visible = true;
 		self.buttonGP.visible = false;
 		self.countdownFNT.visible = false;
+		if (self.questionsList[self.questions] == 3)
+		{
+			self.createHyperlink(self.questionsList[self.questions]);
+		}
+		else if (self.questionsList[self.questions] == 4)
+		{
+			self.createHyperlink(self.questionsList[self.questions]);
+		}
+		self.questions++;
 		egret.Tween.get(this)
 			.wait(2000).call(this.showNext)
 	}
+
+	private createHyperlink(index): void
+	{
+		const self = this;
+		let tx: egret.TextField;
+		self.hyperlinkGP.touchEnabled = true;
+		switch (index)
+		{
+			case 3:
+				tx = new egret.TextField();
+				tx.textFlow = new Array<egret.ITextElement>({ text: "https://tfc-taiwan.org.tw", style: { "href": "https://tfc-taiwan.org.tw" } });
+				tx.width = 450;
+				tx.height = 30;
+				tx.x = 353;
+				tx.y = 196;
+				tx.textColor = 0x0000FF;
+				tx.touchEnabled = true;
+				self.hyperlinkGP.addChild(tx);
+
+				tx = new egret.TextField();
+				tx.textFlow = new Array<egret.ITextElement>({ text: "https://www.mygopen.com/", style: { "href": "https://www.mygopen.com/" } });
+				tx.width = 450;
+				tx.height = 30;
+				tx.x = 204;
+				tx.y = 232;
+				tx.textColor = 0x0000FF;
+				tx.touchEnabled = true;
+				self.hyperlinkGP.addChild(tx);
+
+				tx = new egret.TextField();
+				tx.textFlow = new Array<egret.ITextElement>({ text: "https://www.rumtoast.com/", style: { "href": "https://www.rumtoast.com/" } });
+				tx.width = 450;
+				tx.height = 30;
+				tx.x = 204;
+				tx.y = 267;
+				tx.textColor = 0x0000FF;
+				tx.touchEnabled = true;
+				self.hyperlinkGP.addChild(tx);
+
+				tx = new egret.TextField();
+				tx.textFlow = new Array<egret.ITextElement>({ text: "https://cofacts.tw/", style: { "href": "https://cofacts.tw/" } });
+				tx.width = 316;
+				tx.height = 30;
+				tx.x = 316;
+				tx.y = 304;
+				tx.textColor = 0x0000FF;
+				tx.touchEnabled = true;
+				self.hyperlinkGP.addChild(tx);
+
+				tx = new egret.TextField();
+				tx.textFlow = new Array<egret.ITextElement>({ text: "https://fact-checker.line.me/", style: { "href": "https://fact-checker.line.me/" } });
+				tx.width = 460;
+				tx.height = 30;
+				tx.x = 255;
+				tx.y = 341;
+				tx.textColor = 0x0000FF;
+				tx.touchEnabled = true;
+				self.hyperlinkGP.addChild(tx);
+
+				tx = new egret.TextField();
+				tx.textFlow = new Array<egret.ITextElement>({ text: "https://getdr.com/", style: { "href": "https://getdr.com/" } });
+				tx.width = 330;
+				tx.height = 30;
+				tx.x = 300;
+				tx.y = 376;
+				tx.textColor = 0x0000FF;
+				tx.touchEnabled = true;
+				self.hyperlinkGP.addChild(tx);
+				break;
+			case 4:
+				tx = new egret.TextField();
+				tx.textFlow = new Array<egret.ITextElement>({ text: "https://i.win.org.tw/ ", style: { "href": "https://i.win.org.tw/ " } });
+				tx.width = 330;
+				tx.height = 30;
+				tx.x = -10;
+				tx.y = 352;
+				tx.textColor = 0x0000FF;
+				tx.touchEnabled = true;
+				self.hyperlinkGP.addChild(tx);
+				break;
+		}
+
+	}
+
+
 	private showNext(): void
 	{
 		const self = this
@@ -199,6 +317,11 @@ class Game_3_View extends eui.Component implements eui.UIComponent
 		self.answerImg.visible = false;
 		self.nextImg.visible = false;
 		self.nextButton.visible = false;
+		if (self.hyperlinkGP.numChildren > 0)
+		{
+			self.hyperlinkGP.removeChildren();
+			self.hyperlinkGP.touchEnabled = false;
+		}
 		if (self.correct)
 		{
 			self.player.animation.gotoAndPlayByFrame("run", 0, 1);
@@ -229,11 +352,14 @@ class Game_3_View extends eui.Component implements eui.UIComponent
 						self.enemy.animation.gotoAndPlayByFrame("dead", 0, 1);
 						self.enemy.once(dragonBones.EgretEvent.COMPLETE, () => self.afterDead("enemy"), this);
 						self.callBack.createView("game3");
+						self.callBack.playSound("dragon_dead");
 					}
 					else
 					{
 						self.enemy.animation.gotoAndPlayByFrame("hurt", 0, 1);
 						self.enemy.once(dragonBones.EgretEvent.COMPLETE, () => self.afterHurt("player"), this);
+						self.callBack.playSound("attack");
+						self.callBack.playSound("dragon_hurt");
 					}
 
 					bloodPosition = self.enemyHP + 2;
@@ -251,11 +377,15 @@ class Game_3_View extends eui.Component implements eui.UIComponent
 					{
 						self.player.animation.gotoAndPlayByFrame("dead", 0, 1);
 						self.player.once(dragonBones.EgretEvent.COMPLETE, () => self.afterDead("master"), this);
+						self.callBack.playSound("dragon_attack");
+						self.callBack.playSound("dead");
 					}
 					else
 					{
 						self.player.animation.gotoAndPlayByFrame("hurt", 0, 1);
 						self.player.once(dragonBones.EgretEvent.COMPLETE, () => self.afterHurt("player"), this);
+						self.callBack.playSound("hurt");
+						self.callBack.playSound("dragon_attack");
 					}
 					bloodPosition = self.playerHP + 2;
 					blood = self.HPGP.getChildAt(bloodPosition) as eui.Image;
@@ -287,6 +417,7 @@ class Game_3_View extends eui.Component implements eui.UIComponent
 			case "enemy":
 				self.successImg.visible = true;
 				state = "success";
+				self.callBack.playSound("victory");
 				break;
 		}
 		self.backButton.once(egret.TouchEvent.TOUCH_TAP, () => self.callBack.onClickBackButton(state, "game3"), this);

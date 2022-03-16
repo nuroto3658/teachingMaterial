@@ -5,16 +5,24 @@
 			"name": "preload"
 		},
 		{
-			"keys": "loagding_png",
+			"keys": "loagding_png,LoadingBar_02_png,LoadingBar_01_png",
 			"name": "loading"
 		},
 		{
-			"keys": "answer_02_png,frame_png,question_01_png,question_02_png,answer_01_png",
+			"keys": "frame_png,answer_08_easy_png,answer_09_easy_png,answer_05_easy_png,answer_06_easy_png,answer_07_easy_png,answer_04_easy_png,answer_02_easy_png,question_04_easy_png,question_05_easy_png,question_06_easy_png,question_07_easy_png,question_08_easy_png,question_09_easy_png,question_00_easy_png,question_01_easy_png,question_02_easy_png,question_03_easy_png,noIntroduce_png,noIntroduce_error_png",
 			"name": "questions"
 		},
 		{
-			"keys": "Boss_02_png,Boss_03_png,Scenes_02_png,Scenes_03_png",
+			"keys": "Boss_02_png,Boss_03_png,Scenes_02_png,Scenes_03_png,Avatar_Boss_02_png,Avatar_Boss_03_png",
 			"name": "game2"
+		},
+		{
+			"keys": "question_04_normal_png,question_05_normal_png,question_06_normal_png,question_07_normal_png,question_09_normal_png,question_08_normal_png,question_00_normal_png,question_01_normal_png,question_02_normal_png,question_03_normal_png,answer_07_normal_png,answer_05_normal_png,answer_06_normal_png,answer_04_normal_png,answer_08_normal_png,answer_09_normal_png,answer_02_normal_png,answer_03_normal_png",
+			"name": "questions_2"
+		},
+		{
+			"keys": "answer_05_hard_png,answer_04_hard_png,answer_06_hard_png,answer_07_hard_png,answer_08_hard_png,answer_09_hard_png,answer_03_hard_png,answer_00_hard_png,question_05_hard_png,question_03_hard_png,question_02_hard_png,question_04_hard_png,question_07_hard_png,question_06_hard_png,question_09_hard_png,question_08_hard_png,question_00_hard_png,question_01_hard_png",
+			"name": "questions_3"
 		}
 	],
 	"resources": [
@@ -47,26 +55,6 @@
 			"url": "assets/next.png",
 			"type": "image",
 			"name": "next_png"
-		},
-		{
-			"url": "assets/question_02.png",
-			"type": "image",
-			"name": "question_02_png"
-		},
-		{
-			"url": "assets/question_01.png",
-			"type": "image",
-			"name": "question_01_png"
-		},
-		{
-			"url": "assets/answer_02.png",
-			"type": "image",
-			"name": "answer_02_png"
-		},
-		{
-			"url": "assets/answer_01.png",
-			"type": "image",
-			"name": "answer_01_png"
 		},
 		{
 			"url": "assets/no.png",
@@ -302,6 +290,301 @@
 			"url": "assets/dragonbone/Role_action_01_tex_0.json",
 			"type": "json",
 			"name": "Role_action_01_tex_0_json"
+		},
+		{
+			"url": "assets/answer/easy/answer_08_easy.png",
+			"type": "image",
+			"name": "answer_08_easy_png"
+		},
+		{
+			"url": "assets/answer/easy/answer_09_easy.png",
+			"type": "image",
+			"name": "answer_09_easy_png"
+		},
+		{
+			"url": "assets/answer/easy/answer_05_easy.png",
+			"type": "image",
+			"name": "answer_05_easy_png"
+		},
+		{
+			"url": "assets/answer/easy/answer_06_easy.png",
+			"type": "image",
+			"name": "answer_06_easy_png"
+		},
+		{
+			"url": "assets/answer/easy/answer_07_easy.png",
+			"type": "image",
+			"name": "answer_07_easy_png"
+		},
+		{
+			"url": "assets/question/easy/question_03_easy.png",
+			"type": "image",
+			"name": "question_03_easy_png"
+		},
+		{
+			"url": "assets/question/easy/question_05_easy.png",
+			"type": "image",
+			"name": "question_05_easy_png"
+		},
+		{
+			"url": "assets/question/easy/question_04_easy.png",
+			"type": "image",
+			"name": "question_04_easy_png"
+		},
+		{
+			"url": "assets/question/easy/question_06_easy.png",
+			"type": "image",
+			"name": "question_06_easy_png"
+		},
+		{
+			"url": "assets/question/easy/question_07_easy.png",
+			"type": "image",
+			"name": "question_07_easy_png"
+		},
+		{
+			"url": "assets/question/easy/question_08_easy.png",
+			"type": "image",
+			"name": "question_08_easy_png"
+		},
+		{
+			"url": "assets/question/easy/question_09_easy.png",
+			"type": "image",
+			"name": "question_09_easy_png"
+		},
+		{
+			"url": "assets/question/easy/question_02_easy.png",
+			"type": "image",
+			"name": "question_02_easy_png"
+		},
+		{
+			"url": "assets/question/easy/question_01_easy.png",
+			"type": "image",
+			"name": "question_01_easy_png"
+		},
+		{
+			"url": "assets/question/easy/question_00_easy.png",
+			"type": "image",
+			"name": "question_00_easy_png"
+		},
+		{
+			"url": "assets/answer/easy/answer_04_easy.png",
+			"type": "image",
+			"name": "answer_04_easy_png"
+		},
+		{
+			"url": "assets/answer/easy/answer_02_easy.png",
+			"type": "image",
+			"name": "answer_02_easy_png"
+		},
+		{
+			"url": "assets/question/hard/question_02_hard.png",
+			"type": "image",
+			"name": "question_02_hard_png"
+		},
+		{
+			"url": "assets/question/hard/question_05_hard.png",
+			"type": "image",
+			"name": "question_05_hard_png"
+		},
+		{
+			"url": "assets/question/hard/question_03_hard.png",
+			"type": "image",
+			"name": "question_03_hard_png"
+		},
+		{
+			"url": "assets/question/hard/question_04_hard.png",
+			"type": "image",
+			"name": "question_04_hard_png"
+		},
+		{
+			"url": "assets/question/hard/question_07_hard.png",
+			"type": "image",
+			"name": "question_07_hard_png"
+		},
+		{
+			"url": "assets/question/hard/question_08_hard.png",
+			"type": "image",
+			"name": "question_08_hard_png"
+		},
+		{
+			"url": "assets/question/hard/question_06_hard.png",
+			"type": "image",
+			"name": "question_06_hard_png"
+		},
+		{
+			"url": "assets/question/hard/question_09_hard.png",
+			"type": "image",
+			"name": "question_09_hard_png"
+		},
+		{
+			"url": "assets/question/hard/question_00_hard.png",
+			"type": "image",
+			"name": "question_00_hard_png"
+		},
+		{
+			"url": "assets/question/hard/question_01_hard.png",
+			"type": "image",
+			"name": "question_01_hard_png"
+		},
+		{
+			"url": "assets/question/normal/question_06_normal.png",
+			"type": "image",
+			"name": "question_06_normal_png"
+		},
+		{
+			"url": "assets/question/normal/question_05_normal.png",
+			"type": "image",
+			"name": "question_05_normal_png"
+		},
+		{
+			"url": "assets/question/normal/question_04_normal.png",
+			"type": "image",
+			"name": "question_04_normal_png"
+		},
+		{
+			"url": "assets/question/normal/question_03_normal.png",
+			"type": "image",
+			"name": "question_03_normal_png"
+		},
+		{
+			"url": "assets/question/normal/question_07_normal.png",
+			"type": "image",
+			"name": "question_07_normal_png"
+		},
+		{
+			"url": "assets/question/normal/question_08_normal.png",
+			"type": "image",
+			"name": "question_08_normal_png"
+		},
+		{
+			"url": "assets/question/normal/question_09_normal.png",
+			"type": "image",
+			"name": "question_09_normal_png"
+		},
+		{
+			"url": "assets/question/normal/question_01_normal.png",
+			"type": "image",
+			"name": "question_01_normal_png"
+		},
+		{
+			"url": "assets/question/normal/question_02_normal.png",
+			"type": "image",
+			"name": "question_02_normal_png"
+		},
+		{
+			"url": "assets/answer/hard/answer_05_hard.png",
+			"type": "image",
+			"name": "answer_05_hard_png"
+		},
+		{
+			"url": "assets/answer/hard/answer_04_hard.png",
+			"type": "image",
+			"name": "answer_04_hard_png"
+		},
+		{
+			"url": "assets/answer/hard/answer_03_hard.png",
+			"type": "image",
+			"name": "answer_03_hard_png"
+		},
+		{
+			"url": "assets/answer/hard/answer_00_hard.png",
+			"type": "image",
+			"name": "answer_00_hard_png"
+		},
+		{
+			"url": "assets/answer/hard/answer_06_hard.png",
+			"type": "image",
+			"name": "answer_06_hard_png"
+		},
+		{
+			"url": "assets/answer/hard/answer_08_hard.png",
+			"type": "image",
+			"name": "answer_08_hard_png"
+		},
+		{
+			"url": "assets/answer/hard/answer_09_hard.png",
+			"type": "image",
+			"name": "answer_09_hard_png"
+		},
+		{
+			"url": "assets/answer/hard/answer_07_hard.png",
+			"type": "image",
+			"name": "answer_07_hard_png"
+		},
+		{
+			"url": "assets/answer/normal/answer_03_normal.png",
+			"type": "image",
+			"name": "answer_03_normal_png"
+		},
+		{
+			"url": "assets/answer/normal/answer_05_normal.png",
+			"type": "image",
+			"name": "answer_05_normal_png"
+		},
+		{
+			"url": "assets/answer/normal/answer_02_normal.png",
+			"type": "image",
+			"name": "answer_02_normal_png"
+		},
+		{
+			"url": "assets/answer/normal/answer_04_normal.png",
+			"type": "image",
+			"name": "answer_04_normal_png"
+		},
+		{
+			"url": "assets/answer/normal/answer_06_normal.png",
+			"type": "image",
+			"name": "answer_06_normal_png"
+		},
+		{
+			"url": "assets/answer/normal/answer_08_normal.png",
+			"type": "image",
+			"name": "answer_08_normal_png"
+		},
+		{
+			"url": "assets/answer/normal/answer_07_normal.png",
+			"type": "image",
+			"name": "answer_07_normal_png"
+		},
+		{
+			"url": "assets/answer/normal/answer_09_normal.png",
+			"type": "image",
+			"name": "answer_09_normal_png"
+		},
+		{
+			"url": "assets/question/normal/question_00_normal.png",
+			"type": "image",
+			"name": "question_00_normal_png"
+		},
+		{
+			"url": "assets/noIntroduce.png",
+			"type": "image",
+			"name": "noIntroduce_png"
+		},
+		{
+			"url": "assets/LoadingBar_02.png",
+			"type": "image",
+			"name": "LoadingBar_02_png"
+		},
+		{
+			"url": "assets/LoadingBar_01.png",
+			"type": "image",
+			"name": "LoadingBar_01_png"
+		},
+		{
+			"url": "assets/noIntroduce_error.png",
+			"type": "image",
+			"name": "noIntroduce_error_png"
+		},
+		{
+			"url": "assets/Avatar_Boss_02.png",
+			"type": "image",
+			"name": "Avatar_Boss_02_png"
+		},
+		{
+			"url": "assets/Avatar_Boss_03.png",
+			"type": "image",
+			"name": "Avatar_Boss_03_png"
 		}
 	]
 }

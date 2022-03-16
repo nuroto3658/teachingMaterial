@@ -66,12 +66,6 @@ class Main extends eui.UILayer
     private async runGame()
     {
         await this.loadResource()
-        this.createGameScene();
-        // const result = await RES.getResAsync("description_json")
-        // this.startAnimation(result);
-        // await platform.login();
-        // const userInfo = await platform.getUserInfo();
-        // console.log(userInfo);
 
     }
 
@@ -81,13 +75,17 @@ class Main extends eui.UILayer
         {
             await RES.loadConfig("resource/default.res.json", "resource/");
             await RES.loadGroup("loading", 2);//載入loading組
-            const loadingView = new LoadingUI();
-            this.stage.addChild(loadingView);
             await this.loadTheme();
+            const loadingView = new LoadingUI();
+            new SoundExample();
+            this.stage.addChild(loadingView);
             await RES.loadGroup("preload", 1, loadingView);
             await RES.loadGroup("questions", 0);
+            await this.createGameScene();
+            await this.stage.removeChild(loadingView);
             await RES.loadGroup("game2", 0);
-            this.stage.removeChild(loadingView);
+            await RES.loadGroup("questions_2", 0);
+            await RES.loadGroup("questions_3", 0);
         }
         catch (e)
         {
@@ -208,8 +206,10 @@ class Main extends eui.UILayer
     public onClickBackButton(state: string, mission: string): void
     {
         const self = this;
-
         self.mapView.visible = true;
+        SoundDataMap.channel[0].stop();
+        SoundDataMap.channel = [];
+        SoundDataMap.channel.push(SoundDataMap.testSound[0].play(0, 0));
         switch (state)
         {
             case "success":
@@ -278,16 +278,72 @@ class Main extends eui.UILayer
     public clickMapLevel(level)
     {
         const self = this;
+        if (SoundDataMap.channel.length != 0)
+        {
+            SoundDataMap.channel[0].stop();
+            SoundDataMap.channel = [];
+        }
         switch (level)
         {
             case "1":
                 self.gameView.startGame();
+                SoundDataMap.channel.push(SoundDataMap.testSound[1].play(0, 0));
                 break;
             case "2":
                 self.game_2_View.startGame();
+                SoundDataMap.channel.push(SoundDataMap.testSound[2].play(0, 0));
                 break;
             case "3":
                 self.game_3_View.startGame();
+                SoundDataMap.channel.push(SoundDataMap.testSound[3].play(0, 0));
+                break;
+        }
+    }
+
+    public playSound(soundName: string): void
+    {
+        const self = this;
+        switch (soundName)
+        {
+            case "dead":
+                SoundDataMap.channel[0].stop();
+                SoundDataMap.testSound[4].play(0, 1);
+                break;
+            case "attack":
+                SoundDataMap.testSound[5].play(0, 1);
+                break;
+            case "hurt":
+                SoundDataMap.testSound[6].play(0, 1);
+                break;
+            case "zombie_dead":
+                SoundDataMap.testSound[7].play(0, 1);
+                break;
+            case "zombie_hurt":
+                SoundDataMap.testSound[8].play(0, 1);
+                break;
+            case "zombie_attack":
+                SoundDataMap.testSound[9].play(0, 1);
+                break;
+            case "anubis_attack":
+                SoundDataMap.testSound[10].play(0, 1);
+                break;
+            case "anubis_hurt":
+                SoundDataMap.testSound[11].play(0, 1);
+                break;
+            case "anubis_dead":
+                SoundDataMap.testSound[12].play(0, 1);
+                break;
+            case "dragon_attack":
+                SoundDataMap.testSound[13].play(0, 1);
+                break;
+            case "dragon_hurt":
+                SoundDataMap.testSound[14].play(0, 1);
+                break;
+            case "dragon_dead":
+                SoundDataMap.testSound[15].play(0, 1);
+                break;
+            case "victory":
+                SoundDataMap.testSound[16].play(0, 1);
                 break;
         }
     }

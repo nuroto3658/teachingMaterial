@@ -25,6 +25,7 @@
 		"resource/eui_skins/Game_2_View.exml",
 		"resource/eui_skins/Game_3_View.exml",
 		"resource/eui_skins/GameView.exml",
+		"resource/eui_skins/LoadingUI.exml",
 		"resource/eui_skins/MapView.exml"
 	],
 	"path": "resource/default.thm.json"

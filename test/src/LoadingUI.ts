@@ -27,42 +27,46 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////
 
-class LoadingUI extends egret.Sprite implements RES.PromiseTaskReporter
+class LoadingUI extends eui.Component implements RES.PromiseTaskReporter
 {
 
     public constructor()
     {
         super();
-        this.width = 1600;
-        this.height = 900;
+        this.skinName = 'resource/eui_skins/LoadingUI.exml';//指定好對應的面板名稱；
         this.createView();
     }
 
+    private loadGP: eui.Group;
     private textField: egret.TextField;
+    private progressBar: eui.ProgressBar;
 
     private createView(): void
     {
-
-        let gp = new eui.Group();
-        gp.width = 1600;
-        gp.height = 900;
-        gp.verticalCenter = gp.horizontalCenter = 0;
-        this.addChild(gp);
-
-        let bgimg = new eui.Image();
-        bgimg.source = "loagding_png";
-        gp.addChild(bgimg);
-        bgimg.verticalCenter = bgimg.horizontalCenter = 0;
-
         this.textField = new egret.TextField();
-        gp.addChild(this.textField);
-        this.textField.width = 480;
+        this.textField.width = 500;
         this.textField.height = 100;
+        this.textField.size = 40
+        this.textField.x = 550;
+        this.textField.y = 690;
         this.textField.textAlign = "center";
+        this.loadGP.addChild(this.textField);
+        this.once(egret.TouchEvent.TOUCH_TAP, this.playBGN, this)
     }
+
+    private playBGN(): void
+    {
+        const self = this;
+        SoundDataMap.channel.push(SoundDataMap.testSound[0].play(0, 0));
+    }
+
 
     public onProgress(current: number, total: number): void
     {
         this.textField.text = `Loading...${current}/${total}`;
+
+
+        var fill = (current / total);//0,1之間
+        this.progressBar.value = fill * 100;//進度條顯示的進度控制
     }
 }
